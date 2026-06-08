@@ -1,0 +1,232 @@
+/* =========================================================
+   Anna's dr460nized life — style.css (CYBERPUNK TERMINAL)
+   ========================================================= */
+
+:root {
+  --bg0: #050010;
+  --bg1: #0b0018;
+  --bg2: #1a0030;
+  --txt: #fdfdff;
+  --cyan: #00f7ff;
+  --cyan2: #00f7d2;
+  --pink: #ff1fb6;
+  --pink2: #ff4fe0;
+  --terminal-bg: rgba(5, 0, 15, 0.85);
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--txt);
+  background: var(--bg0);
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Sfondo originale preso da SPO */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(0, 255, 200, 0.35), transparent 55%),
+    radial-gradient(circle at 80% 15%, rgba(255, 0, 180, 0.35), transparent 55%),
+    radial-gradient(circle at 10% 80%, rgba(255, 255, 80, 0.25), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(120, 80, 255, 0.35), transparent 55%),
+    linear-gradient(145deg, var(--bg1), var(--bg2) 40%, #070017 80%);
+}
+
+/* Layout a due colonne asimmetriche */
+.main-container {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  gap: 50px;
+  align-items: center;
+}
+
+.content-left {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-right {
+  flex: 0.8;
+  display: flex;
+  justify-content: center;
+}
+
+/* Tipografia */
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.neon-pink {
+  color: var(--pink);
+  text-shadow: 0 0 15px rgba(255, 31, 182, 0.6);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--cyan);
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 247, 255, 0.2);
+}
+
+/* Scatola del Terminale Konsole */
+.terminal-box {
+  background: var(--terminal-bg);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  margin-bottom: 35px;
+  backdrop-filter: blur(10px);
+}
+
+.terminal-header {
+  background: rgba(15, 0, 30, 0.9);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.dot.red { background: #ff5555; }
+.dot.yellow { background: #ffb86c; }
+.dot.green { background: #50fa7b; }
+
+.terminal-title {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: #6272a4;
+  margin-left: 10px;
+}
+
+.terminal-body {
+  padding: 20px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.prompt {
+  color: #50fa7b;
+  margin-bottom: 8px;
+}
+
+.cmd {
+  color: #f1fa8c;
+}
+
+.output {
+  color: #f8f8f2;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  border-left: 2px solid var(--pink);
+}
+
+.output.internal {
+  color: #6272a4;
+  border-left: 2px solid #6272a4;
+}
+
+/* Pulsantiera Orizzontale Cifrata */
+.links-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.links-row a {
+  font-family: 'Fira Code', monospace;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-spo {
+  background: linear-gradient(135deg, var(--pink), #d60093);
+  color: var(--txt);
+  box-shadow: 0 4px 15px rgba(255, 31, 182, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.btn-spo:hover {
+  box-shadow: 0 6px 25px rgba(255, 31, 182, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-git, .btn-mail {
+  background: rgba(255, 255, 255, 0.03);
+  color: #d1ceda;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.btn-git:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
+  transform: translateY(-2px);
+}
+.btn-mail:hover {
+  border-color: var(--yellow);
+  color: var(--yellow);
+  box-shadow: 0 0 15px rgba(255, 230, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* LA TUA FOTO ENORME, INTEGRALE ED ELEGANTE */
+.image-frame {
+  width: 100%;
+  max-width: 480px; /* Incrementata la dimensione massima */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--pink);
+  transition: transform 0.3s ease;
+}
+.image-frame:hover {
+  transform: scale(1.02);
+}
+
+.image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Responsive per schermi piccoli (TV vs Mobile) */
+@media (max-width: 1000px) {
+  .main-container {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+  h1 { font-size: 2.2rem; text-align: center; }
+  .subtitle { text-align: center; }
+  .image-frame { max-width: 380px; }
+  .links-row { justify-content: center; }
+}
